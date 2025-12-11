@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raja S -  Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+    body { background: #f5f7fa; color: #222; transition: background 0.3s, color 0.3s; }
+
+    /* NAVBAR */
+    .navbar { width: 100%; display: flex; justify-content: space-between; padding: 18px 40px; align-items: center; background: #0d1117; color: #fff; position: fixed; top: 0; left: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+    .logo { font-size: 22px; font-weight: 600; letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 30px; list-style: none; }
+    .nav-links a { color: white; text-decoration: none; font-size: 16px; transition: 0.3s; }
+    .nav-links a:hover { color: #58a6ff; }
+    .menu-btn { font-size: 30px; cursor: pointer; background: none; border: none; color: white; display: none; }
+
+    @media (max-width: 768px) {
+      .nav-links { position: absolute; top: 65px; right: -220px; background: #0d1117; width: 200px; padding: 20px; flex-direction: column; gap: 15px; transition: 0.4s; box-shadow: 0 5px 20px rgba(0,0,0,0.4); }
+      .nav-links.active { right: 0; }
+      .menu-btn { display: block; }
+    }
+
+    /* HOME */
+    .home { display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; padding-top: 140px; padding-bottom: 60px; }
+    .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid #0d1117; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    .home h1 { font-size: 38px; margin-top: 20px; font-weight: 700; }
+    .home span { color: #0077ff; }
+    .home p { font-size: 18px; opacity: 0.8; margin-top: 5px; }
+
+    /* SECTIONS */
+    section { max-width: 900px; margin: auto; padding: 60px 20px; }
+    h2 { font-size: 28px; margin-bottom: 20px; position: relative; }
+    h2::after { content: ""; width: 60px; height: 4px; background: #0077ff; position: absolute; bottom: -8px; left: 0; border-radius: 2px; }
+
+    .about p { font-size: 18px; line-height: 1.7; opacity: 0.9; }
+    .skill-box { display: flex; gap: 15px; flex-wrap: wrap; }
+    .skill-box span { padding: 10px 18px; background: #0077ff; color: white; border-radius: 8px; font-weight: 500; box-shadow: 0 3px 10px rgba(0,0,0,0.2); }
+    .projects ul { list-style: none; padding-left: 0; }
+    .projects ul li { padding: 12px 18px; background: white; border-radius: 10px; margin-bottom: 12px; font-size: 17px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: 0.3s; }
+    .projects ul li:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+    .projects a { color: #0077ff; font-weight: 600; }
+    .view-btn{padding:6px 12px;background:#0077ff;color:#fff;border:none;border-radius:6px;margin-left:10px;cursor:pointer;transition: 0.3s;}
+
+    .theme-toggle{position:fixed;right:20px;bottom:20px;padding:10px 15px;font-size:20px;border:none;border-radius:8px;background:#0077ff;color:#fff;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition: background 0.3s, color 0.3s;} 
+    .dark-mode{background:#0d1117;color:white;} 
+    .dark-mode .projects ul li{background:#161b22;color:white;}
+    .dark-mode .theme-toggle{background:#f5f7fa;color:#0d1117;}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <h2 class="logo">Raja S</h2>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">☰</button>
+</nav>
+
+<section id="home" class="home">
+  <img src="WhatsApp Image 2025-12-01 at 7.30.10 AM.jpeg" alt="Profile" class="profile-img">
+  <h1>Hi, I'm <span>Raja S</span></h1>
+  <p>Frontend Developer</p>
+</section>
+
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>I’m Raja S, a dedicated Frontend Developer specializing in building clean, modern, and fully responsive websites. I focus on delivering smooth UI, animations, and perfect mobile-friendly layouts.</p>
+</section>
+
+<section id="skills" class="skills">
+  <h2>Skills</h2>
+  <div class="skill-box">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>Python</span>
+  </div>
+</section>
+
+<section id="projects" class="projects">
+  <h2>Projects</h2>
+  <ul>
+    <li>Ironing Shop Website <a href="https://s-rajaa.github.io/duraisamy-dry-clean-service"><button class="view-btn">View</button></a></li>
+    <li>Sri Mahalakshmi Traders Website <a href="https://s-rajaa.github.io/SMT"><button class="view-btn" >View</button></a></li>
+    <li>ARD Infotech Website <button class="view-btn">View</button></li>
+    <li>GitHub: <a href="https://github.com/S-Rajaa" target="_blank">S-Rajaa</a></li>
+  </ul>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>Phone: 9047854498</p>
+  <p>Email: rajaasanthii@gmail.com</p>
+</section>
+
+<button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">🌙</button>
+
+<script>
+function toggleTheme(){
+  document.body.classList.toggle('dark-mode');
+  const btn = document.getElementById('themeBtn');
+  if(document.body.classList.contains('dark-mode')){
+    btn.style.background='#f5f7fa';
+    btn.style.color='#0d1117';
+  } else {
+    btn.style.background='#0077ff';
+    btn.style.color='#fff';
+  }
+}
+
+function toggleMenu(){
+  const nav = document.getElementById('navLinks');
+  const btn = document.getElementById('menuBtn');
+  if(window.innerWidth <= 768){
+    nav.classList.toggle('active');
+    btn.textContent = nav.classList.contains('active') ? '✖' : '☰';
+  }
+}
+</script>
+
+</body>
+</html>
